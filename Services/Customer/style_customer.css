@@ -23,7 +23,7 @@ header{
 }
 
 .logo1{
-    background-image: url('/Logo.png');
+    background-image: url('/assets/img/Logo.png');
     background-position: center;
     background-size: cover;
     height: 3rem;
@@ -31,7 +31,7 @@ header{
 }
 
 .logo2{
-    background-image: url('/Name.png');
+    background-image: url('/assets/img/Name.png');
     background-position: center;
     background-size: cover;
     height: 4rem;
@@ -96,14 +96,6 @@ header{
     text-align: center;
 }
 
-.image{
-    top: 0%;
-}
-
-.image img{
-    width: 100%;  
-}
-
 /* extra */
 
 .menu-toggle .bar{
@@ -132,6 +124,7 @@ header{
 
 /* Footer Of the Page Starts */
 .footer{
+    margin-top: 150px;
     width: 100%;
     padding: 20px 15%;
     background: #333;
