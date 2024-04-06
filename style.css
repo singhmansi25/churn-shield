@@ -139,6 +139,10 @@ header{
     padding: 2rem;
 }
 
+.space{
+    margin-left: -10rem;
+    margin-top: 2rem;
+}
 .image_container{
     padding: .75rem;
     height: 300px;
@@ -155,6 +159,7 @@ header{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 2rem;
     background: #fafafa;
 }
 .wrapper h1{
@@ -270,6 +275,7 @@ header{
 
 .col1 a{
     display: block;
+    text-align: left;
     text-decoration: none;
     color: #efefef;
     margin-bottom: 10px;
