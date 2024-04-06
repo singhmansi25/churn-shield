@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Starts */
+
+.Nav-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+header{
+    padding: 1rem 2rem;
+    background-color: grey;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo{
+    display: flex;
+    align-content: center;
+}
+
+.logo1{
+    background-image: url('/Logo.png');
+    background-position: center;
+    background-size: cover;
+    height: 3rem;
+    width: 3rem;
+}
+
+.logo2{
+    background-image: url('/Name.png');
+    background-position: center;
+    background-size: cover;
+    height: 4rem;
+    width: 15rem;
+}
+
+.links{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 45%;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+}
+
+.sign-button{
+    background-color: darkblue;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.links .div:hover{
+    color: darkblue;
+    font-size: 1.5rem;
+}
+
+.links .div a:hover{
+    color: darkblue;
+    font-size: 1.5rem;
+}
+
+.links div{
+    font-size: 1.2rem;
+    color: white;
+    width: 15rem;
+}
+
+#sub{
+    position: relative;
+}
+
+#sub_menu{
+    position: absolute;
+    margin-top: 1rem;
+    display: none;
+    
+}
+
+.sub-menu{
+    margin-bottom: 0.2rem;
+    border-bottom: 2px solid grey;
+    display: relative;
+    background-color: rgb(214, 184, 184);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* extra */
+
+.menu-toggle .bar{
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: var(--white);
+}
+
+.menu-toggle {
+  display: none; 
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  background: white; 
+}
+
+@media screen and (max-width: 786px) {
+  
+}
+
+/* Navigation Bar Ends */
+
+/* About Us Main Content Starts */
+
+.about{
+    margin: 50px;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: #1f003b;
+}
+
+.mission{
+    margin: 50px;
+    text-align: center;
+}
+
+.misson-content{
+    margin: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.value{
+    margin: 50px;
+}
+
+.values{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+
+.value1{
+    border: 2px solid darkgray;
+    border-radius: 20;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 0.6rem 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+.lst{
+  text-align: left;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+
+/* h1 {
+    width: 100%;
+    text-align: left;
+    font-size: 2rem;
+    color: #1f003b;
+  } */
+
+.text1{
+  text-align: center;
+  font-size: 2.8rem;
+}
+
+.why{
+    margin: 50px;
+}
+
+.choose{
+  float: right;    
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 100px 350px 0 0;
+}
+.image_container{
+  height: 500px;
+  width: 500px;
+}
+
+.team{
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #1f003b;
+}
+
+.teams{
+    display: flex;
+    justify-content: space-around;
+}
+
+.members{
+    border: 2px solid darkgray;
+    border-radius: 20;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+.touch{
+    margin: 50px;
+    text-align: center;
+}
+
+/* Our team section */
+
+.rows{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+section{
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    padding: 2em 1em;
+    text-align: center;
+    justify-content: space-around;  
+    width: max-content;
+    margin-left: 15rem ;
+  }
+  .column {
+    width: 100%;
+    padding: 0.5em 0;
+  }
+  .card {
+    box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+    padding: 1.5em 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ffffff;
+  }
+  .card .img-container {
+    width: 8em;
+    height: 10em;
+    background-color: #a993ff;
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .card h3 {
+    font-weight: 500;
+  }
+  .card p {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5em 0 2em 0;
+    letter-spacing: 2px;
+  }
+  .icons {
+    width: 50%;
+    min-width: 180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4em;
+  }
+  .card:hover {
+    background: linear-gradient(#6045ea, #8567f7);
+    color: #ffffff;
+  }
+  .card:hover .img-container {
+    transform: scale(1.15);
+  }
+  @media screen and (min-width: 768px) {
+    section {
+      padding: 1em 7em;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    section {
+      padding: 1em;
+    }
+    .card {
+      padding: 5em 1em;
+    }
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      padding: 0 1em;
+    }
+  }
+
+/* Our team section ENDS */
+
+/* About Us Main Content ENDS */
+
+/* Footer Of the Page Starts */
+.footer{
+    width: 100%;
+    padding: 20px 15%;
+    background: #333;
+    color: #efefef;
+    display: flex;
+}
+
+.footer div{
+    text-align: center;
+}
+
+
+.col2{
+    flex-grow: 2;
+}
+
+.footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.col1 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.col2 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+form input{
+    width: 300px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+form button{
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons i{
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
+/* Footer Of the Page ENDS */
+
+
+
