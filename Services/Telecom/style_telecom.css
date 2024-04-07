@@ -23,7 +23,7 @@ header{
 }
 
 .logo1{
-    background-image: url('/assets/img/Logo.png');
+    background-image: url('../../assets/img/Logo.png');
     background-position: center;
     background-size: cover;
     height: 3rem;
@@ -31,7 +31,7 @@ header{
 }
 
 .logo2{
-    background-image: url('/assets/img/Name.png');
+    background-image: url('../../assets/img/Name.png');
     background-position: center;
     background-size: cover;
     height: 4rem;
