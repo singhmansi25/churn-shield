@@ -211,21 +211,21 @@ header{
     background: linear-gradient(45deg,
                                    rgba(88, 70, 159, 0.7) 0% ,
                                    rgba(136, 113, 199, 0.7)100% ) ,
-                                    url('bg.jpg');
+                                    url('./assets/img/bg.jpg');
                                     background-size: cover;
 }
 .card:nth-child(2):hover{
     background: linear-gradient(45deg,
                                    rgba(88, 70, 159, 0.7) 0% ,
                                    rgba(136, 113, 199, 0.7)100% ) ,
-                                    url('bg2.jpg');
+                                    url('./assets/img/bg2.jpg');
                                     background-size: cover;
 }
 .card:nth-child(3):hover{
     background: linear-gradient(45deg,
                                    rgba(88, 70, 159, 0.7) 0% ,
                                    rgba(136, 113, 199, 0.7)100% ) ,
-                                    url('bg3.jpg');
+                                    url('./assets/img/bg3.jpg');
                                     background-size: cover;
 }
 @media(max-width:991px){
