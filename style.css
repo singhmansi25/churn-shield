@@ -13,8 +13,8 @@
 
 header{
     padding: 1rem 2rem;
-    background-color: grey;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #b9c7cd -30%, #203a43 40%, #083142 120%);
+    box-shadow: 0px 0px 10px 5px rgba(64, 64, 96, 0.5);
 }
 
 .logo{
@@ -56,16 +56,16 @@ header{
     padding: 0.4rem 1rem;
     color: white;
     text-align: center;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(147, 181, 209, 0.5);
 }
 
 .links .div:hover{
-    color: darkblue;
+    color: rgb(168, 168, 242);
     font-size: 1.5rem;
 }
 
 .links .div a:hover{
-    color: darkblue;
+    color: rgb(163, 163, 223);
     font-size: 1.5rem;
 }
 
@@ -123,6 +123,10 @@ header{
 
 /* Main Content Starts */
 
+.main{
+    background: linear-gradient(to bottom, #404040, #212121, #1d1a1a, #242424, #4a4949);
+  }
+
 .symbol{
     font-size: 3rem;
 }
@@ -132,22 +136,34 @@ header{
     width: 100%;
     height: 400px;
     flex-direction: row;
+    /* background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); */
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 35px;
 }
 
 .content1{
     font-size: 1.5rem;
     padding: 2rem;
+    color: #f0dfb1;
 }
 
 .space{
     margin-left: -10rem;
     margin-top: 2rem;
 }
+
 .image_container{
-    padding: .75rem;
-    height: 300px;
-    width: 300px;
+    box-shadow: 0px 0px 20px 10px rgba(249, 221, 137, 0.5);
+    border-radius: 10%;
+    height: 360px;
+    width: 500px;
+  }
+  
+.mySlides{
+    border-radius: 10%;
 }
+
 
 
 
@@ -159,33 +175,40 @@ header{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2rem;
-    background: #fafafa;
+    padding-bottom: 45px;
+    padding-top: 25px;
+    /* background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); */
 }
 .wrapper h1{
     font-size: 3em;
-
+    color: rgb(198, 139, 139);
     margin: 25px;
+}
+
+.wrapper p{
+    font-size: 1.5em;
+    color: #f6dbb4;
+    padding: 15px;
 }
 .content-box{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 1000px;
+    width: 100%;
     margin-top: 30px;
 }
 .card{
     min-height: 220px;
-    width: 320px;
-    padding: 30px;
+    width: 420px;
+    padding: 10px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #fff;
+    background: #fbf9bf;
     margin: 10px 4px;
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+    box-shadow: 0px 15px 30px rgba(195, 191, 248, 0.509);
 }
 .card i{
     margin: 20px;
@@ -253,7 +276,7 @@ header{
 /* Footer Of the Page Starts */
 .footer{
     width: 100%;
-    padding: 20px 15%;
+    padding: 20px 10%;
     background: #333;
     color: #efefef;
     display: flex;
@@ -265,6 +288,7 @@ header{
 
 .col2{
     flex-grow: 2;
+    padding-left: 120px;
 }
 
 .footer div h3{

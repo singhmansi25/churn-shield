@@ -24,3 +24,8 @@ function carousel() {
   x[slideIndex-1].style.display = "block";
   setTimeout(carousel, 5000);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.background-video');
+  video.playbackRate = 0.4; // Set the playback rate to 0.5x
+});
