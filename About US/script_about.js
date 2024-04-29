@@ -27,5 +27,5 @@ function carousel() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const video = document.querySelector('.background-video');
-  video.playbackRate = 0.4; // Set the playback rate to 0.5x
+  video.playbackRate = 0.4;
 });
