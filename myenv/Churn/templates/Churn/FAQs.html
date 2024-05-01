@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently Asked Questions</title>
+    {% load static %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        media="screen"
+        href="{% static 'styles/FAQs.css' %}"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+
+     <!-- Navigation Bar Start -->
+     <header> 
+        <div class="Nav-logo">
+            <div class="logo">
+                <div class="logo1"></div>
+                <div class="logo2"></div>
+                <!-- Extra -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <!-- Extra -->
+            </div>
+            <div class="links">
+              <div class="div"><a href='{%url "home" %}'>Home</a></div>
+              <div class="div" id="sub">Services
+                  <div id="sub_menu">
+                      <div class="sub-menu" style="color: black;"><a href='{%url "telecom" %}'>Telecom</a></div>
+                      <div class="sub-menu" style="color: black;"><a href='{%url "employee" %}'>Customer</a></div>
+                      <div class="sub-menu" style="color: black;"><a href='{%url "custom" %}'>Custom</a></div>
+                  </div>
+              </div>
+              <div class="div"><a href='{%url "about" %}'>About Us</a></div>
+              <div class="div"><a href='{%url "contact" %}'>Contact</a></div>
+              {% if user.is_authenticated %}
+                <div class="user-menu">
+                    <div class="sign-button-authen">{{request.user.username}}
+                        <div class="logout-menu">
+                            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="sign-button"><a href='{%url "login" %}'>Sign</a></div>
+                    {% endif %}
+                </div>
+          </div>
+        </div>
+    </header>
+    <!-- Navigation Bar ENDS -->
+
+    <!-- Main FAQs Content -->
+
+    <div class="wrapper">
+      <p>Protecting Your Business, Predicting Your Future – ChurnShield</p>
+      <h1>Frequently Asked Questions</h1>
+
+      <div class="faq">
+        <button class="accordion">
+            What is ChurnShield and what does it do?
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            ChurnShield specializes in providing cutting-edge solutions for businesses looking to combat Customer churn, Telecom churn. It helps users with comprehensive suite of services in Business Intelligence (BI), Dynamic Dashboards, and Predictive Analytics. We empower organizations to proactively identify churn risks, optimize retention strategies, and drive sustainable growth.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+            How do I get started with ChurnShield ?
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Getting started with ChurnShield  is simple. Just visit our website and sign up for an account. Once you're registered, you can select the service and update the information required. Bingo, and here you go!
+
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+            Can I customize ChurnShield to fit my specific needs?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            
+            Yes, ChurnShield offers customization options to tailor the experience to your preferences. You can reach out to us by Email, Phone. Refer to Contact Us Page.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+            What kind of support is available if I encounter issues?
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            We provide comprehensive customer support to assist you with any issues or questions you may have. You can reach out to us via Email, Phone. Refer to Contact Us Page.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+            Is there a free trial or demo available?
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Yes, we currently offer a free trial/demo of ChurnShield. You can sign up for the trial on our website and explore all the features before making a commitment.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+            Does ChurnShield offer integration with other tools or platforms?
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Yes, ChurnShield integrates with various tools and platforms to enhance its functionality. Some of the integrations available include Cloud, Streamlit.
+
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq">
+        <button class="accordion">
+            How can I provide feedback or suggest new features for ChurnShield?
+
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+           We value your feedback and welcome suggestions for improving ChurnShield. You can submit feedback or feature requests through Email, Phone. Refer to Contact Us Page.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main FAQs Content -->
+
+    <!-- Footer Of the Page Starts -->
+    <div class="footer">
+        <div class="col1">
+            <h3>SERVICES</h3>
+            <a href='{%url "telecom" %}'>Telecom</a>
+            <a href='{%url "employee" %}'>Employee</a>
+            <a href='{%url "custom" %}'>Custom</a>
+        </div>
+        <div class="col2">
+            <h3>Company</h3>
+            <a href='{%url "about" %}'>About US</a>
+            <a href='{%url "faq" %}'>FAQs</a>
+            <form>
+                <input type="email" placeholder="Your Email Address" required>
+                <br>
+                <br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col3">
+            <h3>CONTACT</h3>
+            <p>Lovely Professional University <br> Phagwara, Punjab 144001 <br><br> helpdesk.churnshield@gmail.com </p>
+            <div class="social-icons">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Of the Page ENDS -->
+
+    <script>
+      var x = document.getElementById('sub_menu');
+var y = document.getElementById('sub');
+
+x.addEventListener('mouseenter', function() {
+  x.style.display = 'block'; // Keep submenu open when mouse enters submenu
+});
+
+
+y.addEventListener('click', function() {
+  x.style.display = 'block';
+});
+
+
+var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          this.parentElement.classList.toggle("active");
+
+          var pannel = this.nextElementSibling;
+
+          if (pannel.style.display === "block") {
+            pannel.style.display = "none";
+          } else {
+            pannel.style.display = "block";
+          }
+        });
+      }
+
+      function logout() {
+    window.location.href = '/logout/';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var signButtonAuthen = document.querySelector('.sign-button-authen');
+    var logoutMenu = signButtonAuthen.querySelector('.logout-menu');
+
+    // Toggle logout menu when sign-button-authen is clicked
+    signButtonAuthen.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document
+        logoutMenu.style.display = (logoutMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    logoutMenu.style.display = 'none';
+
+    // Close logout menu when a click event occurs anywhere on the page except for sign-button-authen and logout-menu
+    document.addEventListener('click', function(event) {
+        if (!signButtonAuthen.contains(event.target) && !logoutMenu.contains(event.target)) {
+            logoutMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+
+  </body>
+</html>

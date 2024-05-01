@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    {% load static %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        media="screen"
+        href="{% static 'styles/style_sign.css' %}"/>
+    <title>Sign in</title>
+</head>
+
+<body>
+    <!-- Main content Starts -->
+
+    <div class="main">
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method="POST" action="/ChurnShield/save/" id="signup-form">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" id="name" placeholder="Name" name="username">
+                <input type="email" id="email" placeholder="Email" name="email">
+                <input type="password" id="password" placeholder="Password" name="password">
+                <input type="submit" value="Sign Up" />
+                {% comment %} <button>Sign Up</button> {% endcomment %}
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form method="POST" action="/ChurnShield/save/" id="login-form">
+                <h1>Sign In</h1>
+                {% csrf_token %}
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>                
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" id="email" placeholder="Email" name="email">
+                <input type="password" id="password" placeholder="Password" name="password">
+                <a href="#">Forget Your Password?</a>
+                <input type="submit" value="Log in" />
+                {% comment %} <button><a href='{%url "home" %}'> Sign in</a></button> {% endcomment %}
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Main content Starts -->
+
+    
+    <script>
+        const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
+
+registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
+});
+
+var x = document.getElementById('sub_menu');
+var y = document.getElementById('sub');
+
+x.addEventListener('mouseenter', function() {
+  x.style.display = 'block'; // Keep submenu open when mouse enters submenu
+});
+
+
+y.addEventListener('click', function() {
+  x.style.display = 'block';
+});
+
+document.getElementById("signup-form").addEventListener("submit", async function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form data
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+      // Send form data to the server
+      const response = await fetch('/register', {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              username: name,
+              email: email,
+              password: password
+          })
+      });
+
+      if (response.ok) {
+          // Registration successful
+          const data = await response.text();
+          alert(data); // Display success message
+          window.location.href = "./Sign.html"; // Redirect to login page
+      } else {
+          // Registration failed
+          const errorMessage = await response.text();
+          alert(errorMessage); // Display error message
+      }
+  } catch (error) {
+      // console.error('Error:', error);
+      alert("Internal server error. Please try again later.");
+      window.location.href = "../internalerror.html";
+  }
+});
+
+
+document.getElementById("login-form").addEventListener("submit", async function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form data
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+      // Send form data to the server
+      const response = await fetch('/login', {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              email: email,
+              password: password
+          })
+      });
+
+      if (response.ok) {
+          // Login successful
+          const data = await response.text();
+          alert(data); // Display success message
+          window.location.href = "./index.html"; // Redirect to landing page
+      } else {
+          // Login failed
+          const errorMessage = await response.text();
+          alert(errorMessage); // Display error message
+      }
+  } catch (error) {
+      // console.error('Error:', error);
+      alert("Internal server error. Please try again later.");
+      window.location.href = "../internalerror.html";
+  }
+});
+
+    </script>
+</body>
+
+</html>

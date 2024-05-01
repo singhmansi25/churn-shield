@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Navigation Bar Starts */
+
+.Nav-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+header{
+    padding: 1rem 2rem;
+    background-color: grey;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo{
+    display: flex;
+    align-content: center;
+}
+
+.logo1{
+  background-image: url("/static/images/Logo.png");
+  background-position: center;
+  background-size: cover;
+  height: 3rem;
+  width: 3rem;
+}
+
+.logo2{
+  background-image: url('../images/Name.png');
+  background-position: center;
+  background-size: cover;
+  height: 4rem;
+  width: 15rem;
+}
+
+.links{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 45%;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+}
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.logout-menu {
+  position: absolute;
+  top: calc(100% 10px);
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+}
+
+.sign-button-authen{
+  background-color: darkblue;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 0px 10px 5px rgba(147, 181, 209, 0.5);
+  cursor: pointer;
+}
+
+.logout-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.logout-menu{
+  background-color: rgb(130, 130, 250);
+  color: rgb(255, 255, 255);
+  padding: 2px 4px;
+  /* text-decoration: none; */
+  top: 100% + 15px;
+  display: block;
+  border: #000000;
+  width: 25%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.user-menu:hover .logout-menu {
+  display: block;
+}
+
+.sign-button{
+    background-color: darkblue;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.links .div:hover{
+    color: darkblue;
+    font-size: 1.5rem;
+}
+
+.links .div a:hover{
+    color: darkblue;
+    font-size: 1.5rem;
+}
+
+.links div{
+    font-size: 1.2rem;
+    color: white;
+    width: 15rem;
+}
+
+#sub{
+    position: relative;
+}
+
+#sub_menu{
+    position: absolute;
+    margin-top: 1rem;
+    display: none;
+    
+}
+
+.sub-menu{
+    margin-bottom: 0.2rem;
+    border-bottom: 2px solid grey;
+    display: relative;
+    background-color: rgb(214, 184, 184);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* extra */
+
+.menu-toggle .bar{
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: var(--white);
+}
+
+.menu-toggle {
+  display: none; 
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  background: white; 
+}
+
+@media screen and (max-width: 786px) {
+  
+}
+
+/* Navigation Bar Ends */
+
+/* Main FAQs Content */
+
+.wrapper {
+  max-width: 75%;
+  margin: auto;
+}
+
+.wrapper > p,
+.wrapper > h1 {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.wrapper > h1 {
+  letter-spacing: 3px;
+}
+
+.accordion {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.accordion i {
+  font-size: 1.6rem;
+}
+
+.active,
+.accordion:hover {
+  background-color: #f1f7f5;
+}
+.pannel {
+  padding: 0 2rem 2.5rem 2rem;
+  background-color: white;
+  overflow: hidden;
+  background-color: #f1f7f5;
+  display: none;
+}
+.pannel p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.faq {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+}
+.faq.active {
+  border: none;
+}
+
+/* Main FAQs Content ENDS */
+
+/* Footer Of the Page Starts */
+.footer{
+    width: 100%;
+    padding: 20px 15%;
+    background: #333;
+    color: #efefef;
+    display: flex;
+}
+
+.footer div{
+    text-align: center;
+}
+
+.col2{
+    flex-grow: 2;
+    padding-left: 120px;
+}
+
+.footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.col1 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.col2 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+form input{
+    width: 300px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+form button{
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons i{
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
+/* Footer Of the Page ENDS */

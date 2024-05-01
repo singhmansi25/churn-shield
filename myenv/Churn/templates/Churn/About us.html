@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    {% load static %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        media="screen"
+        href="{% static 'styles/style_about.css' %}"/>
+    <title>Churn Shield</title>
+</head>
+<body>
+    <!-- Navigation Bar Start -->
+    <header> 
+        <div class="Nav-logo">
+            <div class="logo">
+                <div class="logo1"></div>
+                <div class="logo2"></div>
+                <!-- Extra -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <!-- Extra -->
+            </div>
+            <div class="links">
+                <div class="div"><a href='{%url "home" %}'>Home</a></div>
+                <div class="div" id="sub">Services
+                    <div id="sub_menu">
+                        <div class="sub-menu" style="color: black;"><a href='{%url "telecom" %}'>Telecom</a></div>
+                        <div class="sub-menu" style="color: black;"><a href='{%url "employee" %}'>Customer</a></div>
+                        <div class="sub-menu" style="color: black;"><a href='{%url "custom" %}'>Custom</a></div>
+                    </div>
+                </div>
+                <div class="div"><a href='{%url "about" %}'>About Us</a></div>
+                <div class="div"><a href='{%url "contact" %}'>Contact</a></div>
+                {% if user.is_authenticated %}
+                <div class="user-menu">
+                    <div class="sign-button-authen">{{request.user.username}}
+                        <div class="logout-menu">
+                            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="sign-button"><a href='{%url "login" %}'>Sign</a></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navigation Bar ENDS -->
+
+    <!--About Us Main Content Starts-->
+
+    <div class="content">
+        <video class="background-video" autoplay muted loop>
+            <source src="{% static 'images/Media2.mp4' %}" type="video/mp4">        
+            Your browser does not support the video tag.        
+          </video>
+    <div class="about"><h1>About Us</h1>
+        <br><br>
+        <p class="text1">"Secure your Success with ChurnShield - Predict, Protect, Prosper"</p>    
+    </div>
+    <br>
+    <div class="mission"> <h3 class="rows">Our Mission</h3>
+        
+        <p class="misson-content">Our mission is simple, help businesses thrive in today's data-driven World. <br>
+        We believe that every organization has untapped potential hidden within its data, waiting to be unlocked. <br>       
+        Our goal is to unleash this potential by delivering innovative solutions that enable businesses to make smarter decisions, <br>
+        improve operational efficiency, and drive sustainable growth.</p>
+    </div>
+    </div>
+    <div class="main">
+        
+        <div id="about-2" class="about1">
+            <br><br>
+            <div class="value"> <h3 class="rows">Our Values</h3>
+            
+            <div class="content-box-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="about-item text-center">
+                                <img width="64" height="64" src="https://img.icons8.com/cute-clipart/64/book.png" alt="book"/>
+                                <h3>Learn & Grow</h3>
+                                <hr>
+                                <p><ul class="lst">
+                                    <li>Embrace curiosity</li>
+                                    <li>Continuous Development</li>
+                                    <li>Embrace flexibility</li>
+                                  </ul></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-item text-center">
+                                <img width="64" height="64" src="https://img.icons8.com/officel/80/thinking-male.png" alt="thinking-male"/>
+                                <h3>Think Big</h3>
+                                <hr>
+                                <p><ul class="lst">
+                                    <li>Innovation</li>
+                                    <li>Encourage creativity</li>
+                                    <li>Exceed Expectations</li>
+                                  </ul></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-item text-center">
+                                <img width="64" height="64" src="https://img.icons8.com/officel/80/trust.png" alt="trust"/>
+                                <h3>Trust</h3>
+                                <hr>
+                                <p><ul class="lst">
+                                    <li>Reliablity</li>
+                                    <li>Transparency</li>
+                                    <li>Integrity</li>
+                                  </ul></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-item text-center">
+                                <img width="64" height="64" src="https://img.icons8.com/color/48/project-management.png" alt="project-management"/>
+                                <h3>Innovation</h3>
+                                <hr>
+                                <p><ul class="lst">
+                                    <li>Embrace Change</li>
+                                    <li>Diversity</li>
+                                    <li>Think out of the Box</li>
+                                  </ul></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+  
+    
+    <div class="why">
+        <h2>Why Choose Us?</h2>
+    <div class="why-choose-us">        
+        <div class="why_content">
+            <div class="why_content2">
+                <div class="why_content1">Innovation</div>
+                <div class="why_content1">Expertise</div>
+                <div class="why_content1">Dynamic</div>
+                <div class="why_content1">Result-Driven</div>
+            </div>
+        </div>
+        <div class="image_container">
+          <img class="mySlides" src="{% static 'images/img1.png' %}" height="360px" width="600px">
+          <img class="mySlides" src="{% static 'images/img2.png' %}" height="360px" width="600px">
+          <img class="mySlides" src="{% static 'images/img3.png' %}" height="360px" width="600px">
+          <img class="mySlides" src="{% static 'images/img3.png' %}" height="360px" width="600px">
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Team Section -->
+
+    <div class="wrapper">
+      <div class="title">
+          <h4>Our Team</h4>
+      </div>
+      <div class="card_Container">
+          <div class="card">
+              <div class="imbBx">
+                  <img src="{% static 'images/kishor.jpg' %}" alt="">
+              </div>
+              <div class="content">
+                  <div class="contentBx">
+                      <h3>Kishor Goswami <br><span>ML Engineer</span></h3>
+                  </div>
+                  <ul class="sci">
+                      <li style="--i: 1">
+                        <a href="mailto:kishorg1608@gmail.com">
+                          <i class="fas fa-envelope"></i></a>
+                      </li>
+                      <li style="--i: 2">
+                        <a href="https://github.com/kishorg1608">
+                          <i class="fab fa-github"></i></a>
+                      </li>
+                      <li style="--i: 3">
+                        <a href="mailto:kishorg1608@gmail.com">
+                          <i class="fas fa-envelope"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="card">
+              <div class="imbBx">
+                  <img src="{% static 'images/kuldeep.jpg' %}" alt="">
+              </div>
+              <div class="content">
+                  <div class="contentBx">
+                      <h3>Kuldeep Singh <br><span>Web Developer</span></h3>
+                  </div>
+                  <ul class="sci">
+                      <li style="--i: 1">
+                        <a href="mailto:arvindmam398@gmail.com">
+                          <i class="fas fa-envelope"></i></a>
+                      </li>
+                      <li style="--i: 2">
+                        <a href="https://github.com/Kuldeep-398">
+                          <i class="fab fa-github"></i></a>
+                      </li>
+                      <li style="--i: 3">
+                        <a href="https://www.linkedin.com/in/kuldeep-singh-1298b51ba">
+                          <i class="fab fa-linkedin"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="card">
+              <div class="imbBx">
+                  <img src="{% static 'images/aayush.jpg' %}" alt="">
+              </div>
+              <div class="content">
+                  <div class="contentBx">
+                      <h3>Aayush Kumar <br><span>Data analyst</span></h3>
+                  </div>
+                  <ul class="sci">
+                      <li style="--i: 1">
+                        <a href="mailto:aayushbhati4250@gmail.com">
+                          <i class="fas fa-envelope"></i></a>
+                      </li>
+                      <li style="--i: 2">
+                        <a href="https://github.com/Aayush-bhati">
+                          <i class="fab fa-github"></i></a>
+                      </li>
+                      <li style="--i: 3">
+                        <a href="mailto:aayushbhati4250@gmail.com">
+                          <i class="fas fa-envelope"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="card">
+              <div class="imbBx">
+                  <img src="{% static 'images/mansi.jpg' %}" alt="">
+              </div>
+              <div class="content">
+                  <div class="contentBx">
+                      <h3>Mansi Singh <br><span>Web Developer</span></h3>
+                  </div>
+                  <ul class="sci">
+                      <li style="--i: 1">
+                        <a href="https://www.linkedin.com/in/mansi-s-2137b3207">
+                          <i class="fab fa-linkedin"></i></a>
+                      </li>
+                      <li style="--i: 2">
+                          <a href="https://github.com/singhmansi25">
+                            <i class="fa-brands fa-github"></i></a>
+                      </li>
+                      <li style="--i: 3">
+                          <a href="https://www.linkedin.com/in/mansi-s-2137b3207">
+                            <i class="fa-brands fa-linkedin-in"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <!-- Our Team Section ENDS -->
+
+    <div class="touch"> <h3 class="rows">Get in Touch !!</h3>
+        <br><br>
+        <p>Ready to unlock the full potential of your data?
+        <br> <a href='{%url "contact" %}' class="link_contact">Contact Us</a> today to learn more about our services </p>
+    </div><br>
+</div>
+</div>
+
+    <!--About Us Main Content ENDS-->
+
+    <!-- Footer Of the Page Starts -->
+    <div class="footer">
+        <div class="col1">
+            <h3>SERVICES</h3>
+            <a href='{%url "telecom" %}'>Telecom</a>
+            <a href='{%url "employee" %}'>Employee</a>
+            <a href='{%url "custom" %}'>Custom</a>
+        </div>
+        <div class="col2">
+            <h3>Company</h3>
+            <a href='{%url "about" %}'>About US</a>
+            <a href='{%url "faq" %}'>FAQs</a>
+            <form>
+                <input type="email" placeholder="Your Email Address" required>
+                <br>
+                <br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col3">
+            <h3>CONTACT US</h3>
+            <p>Lovely Professional University <br> Phagwara, Punjab 144001 <br><br> helpdesk.churnshield@gmail.com </p>
+            <div class="social-icons">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Of the Page ENDS -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var servicesMenu = document.getElementById('sub');
+    var subMenu = document.getElementById('sub_menu');
+
+    // Hide sub-menu by default
+    subMenu.style.display = 'none';
+
+    // Toggle sub-menu when Services menu is clicked
+    servicesMenu.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document
+        subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // Close sub-menu when a click event occurs anywhere on the page except for Services menu and sub-menu
+    document.addEventListener('click', function(event) {
+        if (!servicesMenu.contains(event.target) && !subMenu.contains(event.target)) {
+            subMenu.style.display = 'none';
+        }
+    });
+});
+
+
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 5000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.background-video');
+  video.playbackRate = 0.4;
+});
+
+function logout() {
+    window.location.href = '/logout/';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var signButtonAuthen = document.querySelector('.sign-button-authen');
+    var logoutMenu = signButtonAuthen.querySelector('.logout-menu');
+
+    // Toggle logout menu when sign-button-authen is clicked
+    signButtonAuthen.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document
+        logoutMenu.style.display = (logoutMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    logoutMenu.style.display = 'none';
+
+    // Close logout menu when a click event occurs anywhere on the page except for sign-button-authen and logout-menu
+    document.addEventListener('click', function(event) {
+        if (!signButtonAuthen.contains(event.target) && !logoutMenu.contains(event.target)) {
+            logoutMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+    
+</body>
+</html>

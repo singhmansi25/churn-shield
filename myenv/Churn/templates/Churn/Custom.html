@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Coming Soon Page</title>
+    {% load static %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        media="screen"
+        href="{% static 'styles/style_custom.css' %}"/>
+  </head>
+  <body>
+
+    <!-- Navigation Bar Start -->
+    <header class="header1"> 
+        <div class="Nav-logo">
+            <div class="logo">
+                <div class="logo1"></div>
+                <div class="logo2"></div>
+                <!-- Extra -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <!-- Extra -->
+            </div>
+            <div class="links">
+              <div class="div"><a href='{%url "home" %}'>Home</a></div>
+              <div class="div" id="sub">Services
+                  <div id="sub_menu">
+                      <div class="sub-menu" style="color: black;"><a href='{%url "telecom" %}'>Telecom</a></div>
+                      <div class="sub-menu" style="color: black;"><a href='{%url "employee" %}'>Customer</a></div>
+                      <div class="sub-menu" style="color: black;"><a href='{%url "custom" %}'>Custom</a></div>
+                  </div>
+              </div>
+              <div class="div"><a href='{%url "about" %}'>About Us</a></div>
+              <div class="div"><a href='{%url "contact" %}'>Contact</a></div>
+              {% if user.is_authenticated %}
+                <div class="user-menu">
+                    <div class="sign-button-authen">{{request.user.username}}
+                        <div class="logout-menu">
+                            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="sign-button"><a href='{%url "login" %}'>Sign</a></div>
+                    {% endif %}
+                </div>
+          </div>
+        </div>
+    </header>
+    <!-- Navigation Bar ENDS -->
+
+    <!-- Main Contents Starts -->
+
+    <section class="container">
+      <img src="{% static 'images/custom.jpg' %}" alt="" class="image" />
+      <header class="header2">Comming Soon Page</header>
+      <p>
+        This Page is under construction. We're working hard to provide new service in our
+        website and we'll ready to launch after.
+      </p>
+      <div class="time-content">
+        <div class="time days">
+          <span class="number"></span>
+          <span class="text">days</span>
+        </div>
+        <div class="time hours">
+          <span class="number"></span>
+          <span class="text">hours</span>
+        </div>
+        <div class="time minutes">
+          <span class="number"></span>
+          <span class="text">minutes</span>
+        </div>
+        <div class="time seconds">
+          <span class="number"></span>
+          <span class="text">seconds</span>
+        </div>
+      </div>
+
+      <div class="email-content">
+        <p>Subscribe now to get the latest updates!</p>
+
+        <div class="input-box">
+          <input type="email" placeholder="Enter your email" />
+          <button>Notify Me</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Contents ENDS -->
+
+    <!-- Footer Of the Page Starts -->
+    <div class="footer">
+        <div class="col1">
+            <h3>SERVICES</h3>
+            <a href='{%url "telecom" %}'>Telecom</a>
+            <a href='{%url "employee" %}'>Employee</a>
+            <a href='{%url "custom" %}'>Custom</a>
+        </div>
+        <div class="col2">
+            <h3>Company</h3>
+            <a href='{%url "about" %}'>About US</a>
+            <a href='{%url "faq" %}'>FAQs</a>
+            <form>
+                <input type="email" placeholder="Your Email Address" required>
+                <br>
+                <br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col3">
+            <h3>CONTACT</h3>
+            <p>Lovely Professional University <br> Phagwara, Punjab 144001 <br><br> helpdesk.churnshield@gmail.com </p>
+            <div class="social-icons">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Of the Page ENDS -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var servicesMenu = document.getElementById('sub');
+    var subMenu = document.getElementById('sub_menu');
+
+    // Hide sub-menu by default
+    subMenu.style.display = 'none';
+
+    // Toggle sub-menu when Services menu is clicked
+    servicesMenu.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document
+        subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // Close sub-menu when a click event occurs anywhere on the page except for Services menu and sub-menu
+    document.addEventListener('click', function(event) {
+        if (!servicesMenu.contains(event.target) && !subMenu.contains(event.target)) {
+            subMenu.style.display = 'none';
+        }
+    });
+});
+
+
+
+const seconds = document.querySelector(".seconds .number"),
+  minutes = document.querySelector(".minutes .number"),
+  hours = document.querySelector(".hours .number"),
+  days = document.querySelector(".days .number");
+
+let secValue = 11,
+  minValue = 2,
+  hourValue = 2,
+  dayValue = 30;
+
+const timeFunction = setInterval(() => {
+  secValue--;
+
+  if (secValue === 0) {
+    minValue--;
+    secValue = 60;
+  }
+  if (minValue === 0) {
+    hourValue--;
+    minValue = 60;
+  }
+  if (hourValue === 0) {
+    dayValue--;
+    hourValue = 24;
+  }
+
+  if (dayValue === 0) {
+    clearInterval(timeFunction);
+  }
+  seconds.textContent = secValue < 10 ? `0${secValue}` : secValue;
+  minutes.textContent = minValue < 10 ? `0${minValue}` : minValue;
+  hours.textContent = hourValue < 10 ? `0${hourValue}` : hourValue;
+  days.textContent = dayValue < 10 ? `0${dayValue}` : dayValue;
+}, 1000); //1000ms = 1s
+
+
+function logout() {
+    window.location.href = '/logout/';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var signButtonAuthen = document.querySelector('.sign-button-authen');
+    var logoutMenu = signButtonAuthen.querySelector('.logout-menu');
+
+    // Toggle logout menu when sign-button-authen is clicked
+    signButtonAuthen.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document
+        logoutMenu.style.display = (logoutMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    logoutMenu.style.display = 'none';
+
+    // Close logout menu when a click event occurs anywhere on the page except for sign-button-authen and logout-menu
+    document.addEventListener('click', function(event) {
+        if (!signButtonAuthen.contains(event.target) && !logoutMenu.contains(event.target)) {
+            logoutMenu.style.display = 'none';
+        }
+    });
+});
+    </script>
+  </body>
+</html>
